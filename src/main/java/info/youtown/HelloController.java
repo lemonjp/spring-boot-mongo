@@ -15,6 +15,7 @@ import info.youtown.repositories.MyDataMongoRepository;
 @Controller
 public class HelloController {
 
+    /*
     @Autowired
     MyDataMongoRepository repository;
 
@@ -69,6 +70,5 @@ public class HelloController {
 
         return mav;
     }
-
-
+    */
 }
