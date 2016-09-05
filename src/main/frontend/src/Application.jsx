@@ -3,6 +3,7 @@
 import React from 'react';
 import $ from 'jquery';
 import axios from 'axios'
+import { Grid, Row, Col, Button } from 'react-bootstrap';
 
 require('!style!css!less!./Application.less');
 
@@ -21,7 +22,11 @@ export class Application extends React.Component {
     }
     render() {
         return (
-            <UserList users={this.state.users}/>
+            <Grid>
+              <Row>
+                <UserList users={this.state.users}/>
+              </Row>
+            </Grid>
         )
     }
 }
@@ -33,7 +38,7 @@ class UserList extends React.Component{
           <User key={user.id} user={user}/>
       );
       return (
-          <table>
+          <table className="table">
             <thead>
               <tr>
                   <th>ID</th>
