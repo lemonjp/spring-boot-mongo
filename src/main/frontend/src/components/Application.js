@@ -8,20 +8,26 @@ import Header from './Header';
 require('!style!css!less!../style/Application.less');
 
 class Application extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {fluid: true};
+    }
+    //let fluid=true;
     render() {
         return (
-          <div className="wrap">
+          <Grid fluid={this.state.fluid}>
             <Header />
-            <Grid>
-              <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/users">Users</Link></li>
-              </ul>
-              <div>
+            <Row>
+              <Col md={4}>.col-md-4</Col>
+              <Col md={4}>.col-md-4</Col>
+              <Col md={4}>.col-md-4</Col>
+            </Row>
+            <Row>
+              <Col md={12}>
                 {this.props.children}
-              </div>
-            </Grid>
-          </div>
+              </Col>
+            </Row>
+          </Grid>
         )
     }
 }
